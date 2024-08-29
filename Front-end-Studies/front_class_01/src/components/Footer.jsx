@@ -1,7 +1,7 @@
 const Footer=()=>{
     return(
         <>
-        <h5>@2024- Todos os direitos reservados.</h5>
+        <p>All rights reserved - to me! Wario!</p>
         </>
 
     )
