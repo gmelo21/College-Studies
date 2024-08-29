@@ -4,7 +4,6 @@ import Data from "./components/Data"
 import Counter from "./components/Counter"
 
 function App() {
-
   return (
     <>
       <Entry/>
@@ -15,7 +14,9 @@ function App() {
 
       <Counter/>
     </>
+
   )
+
 }
 
 export default App

@@ -4,24 +4,26 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import App from './App.jsx'
 import Error from './routes/Error.jsx'
 import Home from './routes/Home.jsx'
-import Aluno from './routes/Aluno.jsx'
+import Student from './routes/Student.jsx'
 
 
-const router= createBrowserRouter([
-{
-  path:'/', element:<App/>,
-  errorElement:<Error/>,
+const router = createBrowserRouter([{
+  path: '/', element: <App/>,
+  errorElement: <Error/>,
 
   children:[
-    {path:'/', element:<Home/>},
-    {path:'/aluno', element:<Aluno/>},
+    {path: '/', element: <Home/>},
+    {path: '/student', element: <Student/>},
+
   ]
-}
-])
+
+}])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/*Text line*/}
+    {/*Text line example!*/}
     <RouterProvider router={router} />
+    
   </StrictMode>,
+
 )

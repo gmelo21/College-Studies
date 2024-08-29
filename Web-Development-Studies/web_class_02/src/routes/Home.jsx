@@ -1,9 +1,11 @@
 const Home=()=>{
     return(
         <>
-        <h1>Página Home</h1>
+        <h1>Home page, immune to vandalization.</h1>
         </>
+
     )
+    
 }
 
 export default Home

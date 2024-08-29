@@ -5,7 +5,9 @@ const Data=({level, name, password})=>{
         <p>Student's parents: {name}</p>
         <p>Student's afiliation: {password}</p>
         </>
+
     )
+    
 }
 
 export default Data

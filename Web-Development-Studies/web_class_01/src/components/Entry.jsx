@@ -5,6 +5,7 @@ const Entry=()=>{
 
     function click(){
         alert(`You're at ${name}!`)
+
     }
 
     return(
@@ -15,7 +16,9 @@ const Entry=()=>{
     <h3>Button component down here:</h3>
     <Button/>
     </>
+
     )
+    
 }
 
 export default Entry
