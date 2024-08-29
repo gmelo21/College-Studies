@@ -1,8 +1,16 @@
+import {Link} from 'react-router-dom'
+import {NavStyle} from '../css/NavStyle'
+
 const Nav=()=>{
     return(
-        <>
-        <h5>Nav here.</h5>
-        </>
+
+        <NavStyle>
+            <section className="nav">
+                <Link to='/' className="link">Home</Link>
+
+            </section>
+            
+        </NavStyle>
 
     )
 
