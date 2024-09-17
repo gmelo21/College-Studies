@@ -1,3 +1,5 @@
+# Aug 21, 2024.
+
 # Working with functions and function-related information, like docstrings, type hints, parameters, and so on.
 # Let's calculate your K/D/A score.
 
