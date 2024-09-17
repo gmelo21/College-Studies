@@ -3,27 +3,31 @@
 
 import time
 
+
 def ask_for_numbers():
-        global a
-        global b
-        while True:
-            try:
-                a = int(input("First number: "))
-                break
-            except ValueError:
-                print("Could I be any clearer? A NUMBER.")
-        while True:
-            try:
-                b = int(input("Second number: "))
-                break
-            except ValueError:
-                print("Could I be any clearer? A NUMBER.")
+    global a
+    global b
+    while True:
+        try:
+            a = int(input("First number: "))
+            break
+        except ValueError:
+            print("C'mon man, this is a calculator. Type a number.")
+    while True:
+        try:
+            b = int(input("Second number: "))
+            break
+        except ValueError:
+            print("Could I be any clearer? A number!")
+
 
 def sum(a, b):
     return a + b
 
+
 def subtract(a, b):
     return a - b
+
 
 def divide(a, b):
     try:
@@ -31,9 +35,12 @@ def divide(a, b):
     except ZeroDivisionError:
         print("Don't try to break my calculator! No dividing by zero!")
 
+
 def multiply(a, b):
     return a * b
 
+
+# Now to the calculator menu:
 while True:
     try:
         print()
@@ -63,8 +70,9 @@ while True:
                 break
             case _:
                 print("Type one of the numbers displayed, please...")
-        time.sleep(1.5)
+        time.sleep(1.5)    # Code freezes for 1.5s, so you can properly see the result.
 
+# Ending message, just so I can use "finally" once.
 try:
     choice = int(input("\nType a number to get a nice message, or anything else for a mean message."))
     print("You look nice today.")
@@ -72,4 +80,3 @@ except ValueError:
     print("I... I can't do this. You look way too nice today.")
 finally:
     print("Anyway, thank you!")
-
