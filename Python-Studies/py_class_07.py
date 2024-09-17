@@ -1,3 +1,5 @@
+# Sep 15, 2024.
+
 # Hey all. Just as a heads-up, this program is going to create two text files in your desktop.
 # Nothing big, easy to delete, and most importantly, only contains a bit of malware (joke).
 # As you probably guessed, we're just studying text files manipulation. Stuff is getting interesting!
