@@ -4,7 +4,7 @@ def calculate_battle_score(kills: int = 0, deaths: int = 0, assists: int = 0) ->
     """
     Args:
         kills (int): Enemies downed in battle.
-        deaths (str): Deaths suffered in battle.
+        deaths (int): Deaths suffered in battle.
         assists (int): Assists on other players' kills.
 
     Returns:
