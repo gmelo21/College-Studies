@@ -1,6 +1,5 @@
-# You know what? I have never done a calculator in Python before. And I feel like it's kind of tradition to do so. So...
-# Going to come back to this soon. Only then, with GUI. Be prepared. (It's going to be the simplest thing ever.)
-# Also, this is just a study about try, except, else and finally. The calculator is for flavor.
+# You know what? I have never done a calculator in Python before. And I feel like it's kind of tradition to do so. So let's do it.
+# Also, this is just a study about try, except, else and finally. The calculator is just for flavor.
 
 import time
 
