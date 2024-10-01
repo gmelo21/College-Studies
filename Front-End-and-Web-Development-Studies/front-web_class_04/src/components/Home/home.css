@@ -1,0 +1,17 @@
+.jumbotron {
+  background-color: rgb(230, 230, 230);
+  padding: 10px;
+  margin: 0px 80px 20px;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.jumbotron > .btn:hover {
+    background: rgb(221, 0, 0);
+    border-color: rgb(131, 0, 0);
+    text-decoration: underline;
+    cursor: pointer;
+  }  
+
+.btn {
+  transition: 0.5s;
+}
