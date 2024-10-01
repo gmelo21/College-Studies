@@ -29,7 +29,7 @@ const Header = () => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <a href="#home" className="btn btn-primary">
+          <a href="#button" className="btn btn-primary">
             Button
           </a>
         </Container>
