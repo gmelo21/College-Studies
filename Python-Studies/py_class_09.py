@@ -1,37 +1,60 @@
 import requests
 
-import json
 
-try:
-    response = requests.get("https://pokeapi.co/api/v2/pokemon/")
+def fetch_data(url):
+    try:
+        response = requests.get(url)
 
-    if response.status_code == 200:
-        dictResponse = response.json()
-
-        for item in dictResponse["results"]:
-            print(f"{item["name"].capitalize()}")
-
-        choice = input(
-            "Type the name of a Pokémon for more info or \"next\" for the next page: ").lower().strip()
-
-        if choice == "next":
-            response = requests.get(dictResponse[choice])
-            print(response)
+        if response.status_code == 200:
+            return response.json()
 
         else:
-            PokeListCount = 0
+            print("Requisition error.")
+            return None
 
-            for item in dictResponse["results"]:
-                if dictResponse["results"][PokeListCount]["name"] == choice:
-                    response = requests.get(dictResponse["results"][PokeListCount]["url"])
-                    dictResponse = response.json()
-                    print(json.dumps(dictResponse["abilities"], indent=4)[1:-1:])
-                    break
-                    
-                PokeListCount += 1
+    except Exception as error:
+        print(f"Error: {error}")
+        return None
 
-    else:
-        print("Requisition error.")
 
-except Exception as error:
-    print(f"Error: {error}")
+def list_pokemon(pokemon_list):
+    for pokemon in pokemon_list:
+        print(pokemon["name"].capitalize())
+
+
+def get_user_choice():
+    return input("\nType the name of a Pokémon to see their abilities, \"next\" for the next page or \"previous\" for the previous page: ").lower().strip()
+
+
+def show_abilities(pokemon_url):
+    dictResponse = fetch_data(pokemon_url)
+    if dictResponse:
+        for ability in dictResponse["abilities"]:
+            print(ability["ability"]["name"].capitalize())
+
+
+mainUrl = "https://pokeapi.co/api/v2/pokemon/"
+
+while True:
+    dictResponse = fetch_data(mainUrl)
+
+    if dictResponse:
+        list_pokemon(dictResponse["results"])
+        choice = get_user_choice()
+        print()
+
+        if choice == "next":
+            mainUrl = dictResponse["next"]
+            
+        elif choice == "previous":
+            mainUrl = dictResponse["previous"]
+
+        else:
+            for pokemon in dictResponse["results"]:
+                if pokemon["name"] == choice:
+                    show_abilities(pokemon["url"])
+                    exit()
+
+            else:
+                print("Name not found.")
+                exit()
