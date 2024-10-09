@@ -1,5 +1,13 @@
 import requests
 
+# way to scroll X amount of pages, way to go to specific pokemon page. make script repeatable.
+
+# 1 - next
+# 2 - previous
+# find pokemon page
+# find pokemon info
+#
+
 
 def fetch_data(url):
     if url is None:
@@ -34,8 +42,12 @@ def get_user_choice():
 def show_abilities(pokemon_url):
     dictResponse = fetch_data(pokemon_url)
     if dictResponse:
+        print("Abilities:")
         for ability in dictResponse["abilities"]:
             print(ability["ability"]["name"].capitalize())
+        print("\nMoves:")
+        for move in dictResponse["moves"]:
+            print(move["move"]["name"].capitalize())
 
 
 def find_pokemon_across_pages(name):
@@ -73,9 +85,10 @@ while True:
 
     if dictResponse:
         total_count = dictResponse["count"]
-        totalPages = (total_count // limit) + \
-            (1 if total_count % limit > 0 else 0)
+        totalPages = (total_count // limit) + (1 if total_count % limit > 0 else 0)
+            
         list_pokemon(dictResponse["results"], currentPage, totalPages)
+        
         choice = get_user_choice()
         print()
 
