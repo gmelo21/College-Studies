@@ -24,9 +24,9 @@ export default function SensorChart() {
 
         try {
             const [luminosityResponse, humidityResponse, temperatureResponse] = await Promise.all([
-                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/luminosity?lastN=10', requestOptions),
-                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/humidity?lastN=10', requestOptions),
-                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/temperature?lastN=10', requestOptions),
+                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/luminosity?lastN=50', requestOptions),
+                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/humidity?lastN=50', requestOptions),
+                fetch('/STH/v1/contextEntities/type/Lamp/id/urn:ngsi-ld:Lamp:EDGE4/attributes/temperature?lastN=50', requestOptions),
             ]);
 
             if (!luminosityResponse.ok || !humidityResponse.ok || !temperatureResponse.ok) {
@@ -88,16 +88,22 @@ export default function SensorChart() {
                 dataKey="luminosity"
                 stroke="#8884d8"
                 activeDot={{ r: 8 }}
+                animationDuration={0} // Disable animation
+                isAnimationActive={false} // Ensure no animation occurs
             />
             <Line
                 type="monotone"
                 dataKey="humidity"
                 stroke="#82ca9d"
+                animationDuration={0} // Disable animation
+                isAnimationActive={false} // Ensure no animation occurs
             />
             <Line
                 type="monotone"
                 dataKey="temperature"
                 stroke="#ffc658"
+                animationDuration={0} // Disable animation
+                isAnimationActive={false} // Ensure no animation occurs
             />
         </LineChart>
     );
