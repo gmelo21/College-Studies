@@ -1,0 +1,18 @@
+#container-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-page {
+  height: 100%;
+}
+
+#main-page {
+  flex: 1;
+  position: relative;
+}
+
+#footer-page {
+  height: 100%;
+}
