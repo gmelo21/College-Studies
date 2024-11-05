@@ -2,6 +2,7 @@
 
 # Some class exercises with strings and some numbers, nothing special.
 
+
 text = input("Type in your text: ")
 
 # Vowel checker.

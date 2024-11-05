@@ -4,6 +4,13 @@
 # Happens to the best of us. Most importantly, I think I understood why it happened and how to deal with it, too. So y'all can 
 # bet I'll continue to come back stronger than ever, over and over again!
 
+# To all of our displeasure, I couldn't think of any quirky project to do using exclusively recursiveness, so take the 
+# basic exercises we are given in class instead. It's just one of those things you just have to make-do. 
+# (I'm kidding, they're great exercises and I should practice and appreciate them more.)
+
+
+# Sum of all elements of a list:
+
 def list_sum(chosenList):
     if len(chosenList) == 1:
         return chosenList[0]
@@ -12,9 +19,10 @@ def list_sum(chosenList):
     
     
 yourList = []
+yourLength = int(input("Choose the desired length for your lists: (Suggestion: Keep it short. Wastes less time for you and it makes the code easier to check!) "))
 
-for i in range(1, 6):
-    yourNumber = float(input(f"({i}/5) Choose a number to be added to your list: "))
+for i in range(0, yourLength):
+    yourNumber = float(input(f"({i + 1}/{yourLength}) Choose a number to be added to your list: "))
     yourList.append(yourNumber)
     
-print(list_sum(yourList))
+print(f"The sum of all numbers inside the list is: {list_sum(yourList)}")

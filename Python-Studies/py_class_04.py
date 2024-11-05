@@ -3,6 +3,7 @@
 # Messing around with dictionaries. This code is a complete joke I had with a friend of mine, but it's still well made.
 # Hopefully.
 
+
 thingamajigs = {}
 thingamajangs = {}
 thingamabonks = {"Thong": "A bajillion thongies.", "Thung": "A zillion thungies."}

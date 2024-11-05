@@ -3,6 +3,7 @@
 # Working with functions and function-related information, like docstrings, type hints, parameters, and so on.
 # Let's calculate your K/D/A score.
 
+
 # Function to run the calculations.
 def calculate_battle_score(kills: int = 0, deaths: int = 0, assists: int = 0) -> float:
     """

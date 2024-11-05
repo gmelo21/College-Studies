@@ -3,6 +3,7 @@
 # Working with f-strings and slicing. Super simple code after I realized 75% of it was unnecessary.
 # But I want you to know it was there, so I don't look lazy for the small code.
 
+
 # Function to repeat the desired text for desired length.
 def repeat_for_length(text, wanted_length):
     return (text * (wanted_length//len(text) + 1))[:wanted_length:]

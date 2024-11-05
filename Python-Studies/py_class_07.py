@@ -4,6 +4,7 @@
 # Nothing big, easy to delete, and most importantly, only contains a bit of malware (joke).
 # As you probably guessed, we're just studying text files manipulation. Stuff is getting interesting!
 
+
 import os
 
 # Getting the path to your precious little desktop, and then creating our file there.

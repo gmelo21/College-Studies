@@ -3,6 +3,7 @@
 # Little "sets" study for good measure. Nothing special, just so I can say I did something today.
 # Sorry for disappearing my GitHub fans, exams and some other stuff got in the way. For the record, I was still studying!
 
+
 # First, let's create two sets so I can show you a little something.
 myFavoriteNumberAndWord = {1, True}
 mySecondFavoriteNumberAndWord = {False, 0}

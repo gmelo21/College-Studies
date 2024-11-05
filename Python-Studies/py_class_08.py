@@ -6,6 +6,7 @@
 # This file will create two other files in your computer, one JSON file and another Python script, which
 # you'll have to run yourself later. First, let's import JSON.
 
+
 import json
 
 # We'll write the script for the other Python file too.
