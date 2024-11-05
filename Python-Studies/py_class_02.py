@@ -1,4 +1,4 @@
-#  Aug 21, 2024.
+# Aug 21, 2024.
 
 # Working with f-strings and slicing. Super simple code after I realized 75% of it was unnecessary.
 # But I want you to know it was there, so I don't look lazy for the small code.

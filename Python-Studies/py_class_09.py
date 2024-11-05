@@ -7,7 +7,6 @@
 
 # Enjoy!
 
-
 import requests  # Import the requests library to handle HTTP requests
 
 
