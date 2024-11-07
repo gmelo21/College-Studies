@@ -10,7 +10,6 @@
 
 import requests  # Import the requests library to handle HTTP requests
 
-
 def fetch_data(url):
     if url is None:
         return None  # Return None if the provided URL is None

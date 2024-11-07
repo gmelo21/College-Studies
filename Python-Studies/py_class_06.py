@@ -6,7 +6,6 @@
 
 import time
 
-
 def ask_for_numbers():
     global a
     global b

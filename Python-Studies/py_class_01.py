@@ -5,6 +5,7 @@
 
 
 # Function to run the calculations.
+
 def calculate_battle_score(kills: int = 0, deaths: int = 0, assists: int = 0) -> float:
     """
     Args:

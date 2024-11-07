@@ -3,14 +3,14 @@
 # Hello my GitHubbers! You know an aspect of nature I regularly think is underappreciated? Clouds.
 # And JSON files, too. Which is a coincidence, because we are working with both today!
 
+
 # This file will create two other files in your computer, one JSON file and another Python script, which
 # you'll have to run yourself later. First, let's import JSON.
 
-
+import os
 import json
 
 # We'll write the script for the other Python file too.
-
 with open("py_class_08_part2.py", "w+") as file:
     file.write("""
 # Welcome back! Let's import JSON.

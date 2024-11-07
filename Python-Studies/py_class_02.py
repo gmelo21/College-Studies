@@ -5,6 +5,7 @@
 
 
 # Function to repeat the desired text for desired length.
+
 def repeat_for_length(text, wanted_length):
     return (text * (wanted_length//len(text) + 1))[:wanted_length:]
     # The "+1" is here so the expression always results in the exact number or above (which would be cut by slicing).

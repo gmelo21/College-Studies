@@ -18,6 +18,7 @@ for i in text.lower():
 
 print("\t\"{1}\" has {0} vowels.".format(vowelCount, text))
 
+
 # Word separator and counter.
 
 print("\nWord separator and counter:")
@@ -31,6 +32,7 @@ if len(individualWords) == 1:
 else:
     print("\tThe words present are: {0}.".format(str(individualWords)[1:-1]))
     print("\tThere are {0} words.".format(len(individualWords)))
+
 
 # Number checker.
 
