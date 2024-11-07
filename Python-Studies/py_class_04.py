@@ -22,10 +22,7 @@ for n in range(2):
     thangies = input("How many thangies? ").capitalize().strip()   # Item for the key in the second dictionary.
     thingamajangs[thang] = thangies    # Adds it to the dictionary.
 
-thingaminator = {1: thingamajigs,
-                 2: thingamajangs,
-                 3: thingamabonks
-                 }    # Dictionary which stores the two dictionaries we created, plus one more that was already here.
+thingaminator = {1: thingamajigs, 2: thingamajangs, 3: thingamabonks}   # Dictionary which stores the two dictionaries we created, plus one more that was already here.
 
 print("\nThese are your dictionaries: ")
 
