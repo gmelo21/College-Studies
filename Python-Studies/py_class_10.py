@@ -18,13 +18,14 @@ def list_sum(chosenList):
     
     
 yourList = []
-yourLength = int(input("Choose the desired length for your lists: (Suggestion: Keep it short. Wastes less time for you and it makes the code easier to check!) "))
+yourLength = int(input("Choose the desired length for your lists: (Keep it short. Wastes less time for you and it makes the code easier to check!) "))
 
 for i in range(0, yourLength):
     yourNumber = float(input(f"({i + 1}/{yourLength}) Choose a number to be added to your list: "))
     yourList.append(yourNumber)
     
 print(f"The sum of all numbers inside the list is: {list_sum(yourList)}")
+print()
 
 
 # Sum of numbers from 0 to N:
@@ -39,3 +40,22 @@ def number_sum(chosenNumber):
 yourNumber = float(input(f"Choose a number: "))
     
 print(f"The sum of the numbers from 0 to your number ({yourNumber}) is: {number_sum(yourNumber)}")
+print()
+
+
+# GCD of two numbers.
+
+def gcd_calculator(x, y):
+    if x >= y and x % y == 0:
+        return y
+    elif x < y:
+        return gcd_calculator(y, x)
+    else:
+        return gcd_calculator(y, x % y)
+
+
+yourX = int(input('X\'s value: '))
+yourY = int(input('Y\'s value: '))
+print(f"The GCD of {yourX} and {yourY} is: {gcd_calculator(yourX, yourY)}")
+print()
+
