@@ -1,75 +1,71 @@
-# Sep 14, 2024.
-
-# Little "sets" study for good measure. Nothing special, just so I can say I did something today.
-# Sorry for disappearing my GitHub fans, exams and some other stuff got in the way. For the record, I was still studying!
-
-
-# First, let's create two sets so I can show you a little something.
+# Creating two sets with some values to demonstrate set behavior.
 myFavoriteNumberAndWord = {1, True}
 mySecondFavoriteNumberAndWord = {False, 0}
 
-print(f"Here is a set informing you of my favorite number and word: {myFavoriteNumberAndWord}\nWait - where is the word?")
-# "1" and "True" count as the same element, and sets do not accept repeated elements. Therefore, the first declared stays.
-# Same is true for "0" and "False", look:
-print(f"\nAnyway, here's my second favorite ones: {mySecondFavoriteNumberAndWord}\nIs this some kind of twisted joke?!")
+# Displaying the first set. Note that both 1 and True are considered the same in a set.
+print(
+    f"Here is a set informing you of my favorite number and word: {myFavoriteNumberAndWord}\nWait - where is the word?")
+# The set removes duplicates, so only one element (1 and True are the same) will appear in the set.
+# Similarly, 0 and False are treated as the same element.
+print(
+    f"\nAnyway, here's my second favorite ones: {mySecondFavoriteNumberAndWord}\nIs this some kind of twisted joke?!")
 
-# Now let's get to the real stuff. Let's create two sets in two different ways, one of them empty.
+# Creating two sets, one empty and the other with some initial values.
 myFavoriteColors = set()
-myFavoriteFoods = {"orange", "apple", "broccoli", "other healthy food", "pizza"}
+myFavoriteFoods = {"orange", "apple",
+                   "broccoli", "other healthy food", "pizza"}
 
-# Here are some ways to add elements to sets:
+# Adding elements to a set using the `add()` and `update()` methods.
 myFavoriteColors.add("orange")
 myFavoriteColors.update(["blue", "red", "green", "pink"])
-# When adding multiple elements, they need to be a list, or else it would iterate through each character of the string.
 
-# Here are how we could display each element in a set:
+# Displaying each element of the `myFavoriteColors` set using a loop.
 print("\nMy favorite colors:")
 for x in myFavoriteColors:
     print(x)
 
-# Or the easier way:
+# Alternatively, print the entire `myFavoriteFoods` set directly.
 print("\nMy favorite foods:")
 print(myFavoriteFoods)
 
-# Now let's manipulate those sets a bit.
-# The union of two sets:
+# Performing set operations: union of two sets.
 myFavoriteStuff = myFavoriteFoods.union(myFavoriteColors)
 myFavoriteStuff = myFavoriteFoods | myFavoriteColors
-# Both examples return the same thing.
+# Both union methods give the same result.
 print(f"\nSum of my favorite stuff: {myFavoriteStuff}")
-# Notice how orange was in both sets, but since we can't have repeated elements, it appears only once.
+# Elements that appear in both sets will only appear once due to the nature of sets.
 
-# The intersection of two sets:
+# Performing set operations: intersection of two sets.
 commonWords = myFavoriteFoods.intersection(myFavoriteColors)
 commonWords = myFavoriteFoods & myFavoriteColors
-# Both examples return the same thing.
-print(f"\nCommon words between food set and colors set: {commonWords} Orange is in both!")
+# Both intersection methods give the same result.
+print(
+    f"\nCommon words between food set and colors set: {commonWords} Orange is in both!")
 
-# The difference between two sets:
+# Performing set operations: difference between two sets.
 notCommonWords = myFavoriteFoods.difference(myFavoriteColors)
 notCommonWords = myFavoriteFoods - myFavoriteColors
-# Both examples return the same thing.
-print(f"\nWords in food set that are not in the colors set: {notCommonWords} Orange is not here!")
+# Both difference methods give the same result.
+print(
+    f"\nWords in food set that are not in the colors set: {notCommonWords} Orange is not here!")
 
-# How to erase a single element from a set:
+# Removing a single element from the `myFavoriteFoods` set using `discard()`.
 myFavoriteFoods.discard("other healthy food")
 
-# Or the cooler way to do it with multiple elements:
+# Removing multiple elements from a set using `filter()` and a lambda function.
 foodsToRemove = ["orange", "apple", "broccoli"]
-myFavoriteFoods = set(filter(lambda x: x not in foodsToRemove, myFavoriteFoods))
-# Returns True for elements not in foodsToRemove but in myFavoriteFoods, therefore adding them to a 
-# new set to be attributed to myFavoriteFoods.
+myFavoriteFoods = set(
+    filter(lambda x: x not in foodsToRemove, myFavoriteFoods))
+# The lambda function filters out the elements present in `foodsToRemove` from the set.
 
-# There's another way to erase an element from a set, but it's riskier.
-# If you try to use .remove on an element that doesn't exist, you get an error.
+# Attempting to remove an element from the set using `remove()`. This raises an exception if the element is not found.
 try:
     myFavoriteFoods.remove("beans")
 except Exception as e:
     print("\nAn exception occurred:", type(e).__name__)
-    # Using .discard does not give you an exception, but also does not tell you if the element
-    # already existed or not. Both could be important.
+    # Using `discard()` instead of `remove()` prevents an exception if the element is not found.
     myFavoriteFoods.discard("beans")
-    # No error, see?
+    # No exception raised.
 
-# Here's the update food set, with my actual favorite food.
+# Displaying the updated `myFavoriteFoods` set.
 print(f"\nMy favorite food is: {str(myFavoriteFoods)[1:-1:]}")

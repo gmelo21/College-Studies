@@ -1,10 +1,7 @@
-# Sep 14, 2024.
-
-# You know what? I have never done a calculator in Python before. And I feel like it's kind of tradition to do so. So let's do it.
-# Also, this is just a study about try, except, else and finally. The calculator is just for flavor.
-
-
 import time
+
+# Function to ask the user for two numbers, ensuring they are integers.
+
 
 def ask_for_numbers():
     global a
@@ -12,39 +9,48 @@ def ask_for_numbers():
     while True:
         try:
             a = int(input("First number: "))
-            break
+            break  # Exit loop if input is valid.
         except ValueError:
-            print("C'mon man, this is a calculator. Type a number.")
+            print("Please enter a valid number.")
     while True:
         try:
             b = int(input("Second number: "))
-            break
+            break  # Exit loop if input is valid.
         except ValueError:
-            print("Could I be any clearer? A number!")
+            print("Please enter a valid number.")
+
+# Function to sum two numbers.
 
 
 def sum(a, b):
     return a + b
 
+# Function to subtract the second number from the first.
+
 
 def subtract(a, b):
     return a - b
+
+# Function to divide the first number by the second. Handles division by zero.
 
 
 def divide(a, b):
     try:
         return a / b
     except ZeroDivisionError:
-        print("Don't try to break my calculator! No dividing by zero!")
+        print("Division by zero is not allowed!")
+
+# Function to multiply two numbers.
 
 
 def multiply(a, b):
     return a * b
 
 
-# Now to the calculator menu:
+# Main loop that displays the calculator menu and allows the user to select an operation.
 while True:
     try:
+        # Display operation options.
         print()
         print("1 - Sum")
         print("2 - Subtract")
@@ -53,32 +59,41 @@ while True:
         print("0 - End")
         operation = int(input("\nChoose your operation: "))
     except ValueError:
-        print("That's not even a number!")
+        # If the input is not a valid number, display an error message.
+        print("Please enter a valid number.")
     else:
+        # Perform the operation based on user input.
         match operation:
             case 1:
-                ask_for_numbers()
-                print(sum(a, b))
+                ask_for_numbers()  # Prompt the user for numbers.
+                print(sum(a, b))  # Display the result of the sum.
             case 2:
-                ask_for_numbers()
-                print(subtract(a, b))
+                ask_for_numbers()  # Prompt the user for numbers.
+                print(subtract(a, b))  # Display the result of the subtraction.
             case 3:
-                ask_for_numbers()
-                print(divide(a, b))
+                ask_for_numbers()  # Prompt the user for numbers.
+                print(divide(a, b))  # Display the result of the division.
             case 4:
-                ask_for_numbers()
+                ask_for_numbers()  # Prompt the user for numbers.
+                # Display the result of the multiplication.
                 print(multiply(a, b))
             case 0:
-                break
+                break  # Exit the loop if the user chooses to end the program.
             case _:
-                print("Type one of the numbers displayed, please...")
-        time.sleep(1.5)    # Code freezes for 1.5s, so you can properly see the result.
+                # Handle invalid options.
+                print("Please choose a valid option from the menu.")
+        # Pause for 1.5 seconds so the user can see the result.
+        time.sleep(1.5)
 
-# Ending message, just so I can use "finally" once.
+# Ending message to demonstrate the use of 'finally' block.
 try:
-    choice = int(input("\nType a number to get a nice message, or anything else for a mean message."))
+    # Ask the user for input and display a positive message if it's a number.
+    choice = int(input(
+        "\nType a number to get a nice message, or anything else for a mean message: "))
     print("You look nice today.")
 except ValueError:
+    # If input is not a number, display a different message.
     print("I... I can't do this. You look way too nice today.")
 finally:
+    # Always display this message, regardless of the input.
     print("Anyway, thank you!")

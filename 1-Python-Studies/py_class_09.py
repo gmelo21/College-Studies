@@ -1,13 +1,3 @@
-# Oct 10, 2024.
-
-# Hello GitHubbers! This code is a bit more extensive than normal, and it isn't made to study anything specific besides requests.
-# As it took a bit longer to made and is a bit more complicated, I made the difficult choice to not allow my amazing sense of
-# character write the comments, and instead let ChatGPT do it. This way, if you're actually confused about something, you can actually
-# understand what's going on instead of reading some weird comment about how I love clouds. I won't be gone for long though.
-
-# Enjoy!
-
-
 import requests  # Import the requests library to handle HTTP requests
 
 
