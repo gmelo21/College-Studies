@@ -56,6 +56,26 @@ def gcd_calculator(x, y):
 
 yourX = int(input('X\'s value: '))
 yourY = int(input('Y\'s value: '))
+
 print(f"The GCD of {yourX} and {yourY} is: {gcd_calculator(yourX, yourY)}")
+print()
+
+
+# Exponentiation of a number by the other.
+
+def exp_calculator(x, y):
+    if y == 0:
+        return 1
+    elif y % 2 == 0:
+        half_power = exp_calculator(x, y // 2)
+        return half_power * half_power
+    else:
+        return x * exp_calculator(x, y - 1)
+
+
+yourX = int(input('Base value: '))
+yourY = int(input('Exponent value: '))
+
+print(f"The result of {yourX}^{yourY} is: {exp_calculator(yourX, yourY)}")
 print()
 
