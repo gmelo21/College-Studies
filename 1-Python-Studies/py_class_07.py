@@ -5,6 +5,7 @@ desktopPath = os.path.join(os.path.expanduser("~"), "Desktop")
 filePath = os.path.join(desktopPath, "dummyFile.txt")
 file = open(filePath, 'w+', encoding="utf-8")
 
+
 print(f"File successfully created at \"{filePath}\"\n")
 
 # Write some text into the file
