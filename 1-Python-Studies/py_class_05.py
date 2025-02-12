@@ -52,12 +52,6 @@ print(
 # Removing a single element from the `myFavoriteFoods` set using `discard()`
 myFavoriteFoods.discard("other healthy food")
 
-# Removing multiple elements from a set using `filter()` and a lambda function
-foodsToRemove = ["orange", "apple", "broccoli"]
-myFavoriteFoods = set(
-    filter(lambda x: x not in foodsToRemove, myFavoriteFoods))
-# The lambda function filters out the elements present in `foodsToRemove` from the set
-
 # Attempting to remove an element from the set using `remove()`. This raises an exception if the element is not found
 try:
     myFavoriteFoods.remove("beans")
@@ -66,6 +60,12 @@ except Exception as e:
     # Using `discard()` instead of `remove()` prevents an exception if the element is not found
     myFavoriteFoods.discard("beans")
     # No exception raised
+    
+# Removing multiple elements from a set using `filter()` and a lambda function
+foodsToRemove = ["orange", "apple", "broccoli"]
+myFavoriteFoods = set(
+    filter(lambda x: x not in foodsToRemove, myFavoriteFoods))
+# The lambda function filters out the elements present in `foodsToRemove` from the set
 
 # Displaying the updated `myFavoriteFoods` set
 print(f"\nMy favorite food is: {str(myFavoriteFoods)[1:-1:]}")
