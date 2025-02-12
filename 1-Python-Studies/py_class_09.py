@@ -258,5 +258,5 @@ def main():
             break  # Exit the loop if data fetch fails
 
 
-if __name__ == "__main__":
-    main()  # Run the main function if this script is executed
+# Run the main function
+main()

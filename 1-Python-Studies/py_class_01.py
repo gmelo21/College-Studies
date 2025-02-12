@@ -2,12 +2,12 @@
 def calculate_battle_score(kills: int = 0, deaths: int = 0, assists: int = 0) -> float:
     """
     Args:
-        kills (int): Enemies downed in battle.
-        deaths (int): Deaths suffered in battle.
-        assists (int): Assists on other players' kills.
+        kills (int): Enemies downed in battle
+        deaths (int): Deaths suffered in battle
+        assists (int): Assists on other players' kills
 
     Returns:
-        float: The player's average battle score.
+        float: The player's average battle score
     """
     # Calculate battle score: kills + half of assists
     battle_score = kills + (assists / 2)
@@ -38,9 +38,9 @@ while True:
         if len(results) == 3:
             # Print the player's battle score formatted to 2 decimal places
             print(
-                f"Player {username} has finished a match with a battle score of {calculate_battle_score(results[0], results[1], results[2]):.2f}.")
+                f"Player {username} has finished a match with a battle score of {calculate_battle_score(results[0], results[1], results[2]):.2f}")
             break
         else:
-            print("Invalid values. Please enter 3 numbers.\n")
+            print("Invalid values. Please enter 3 numbers\n")
     else:
-        print("Values are not numbers. Please enter valid numbers.\n")
+        print("Values are not numbers. Please enter valid numbers\n")

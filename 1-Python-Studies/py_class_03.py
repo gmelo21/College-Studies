@@ -1,8 +1,8 @@
-# Taking user input for text.
+# Taking user input for text
 text = input("Type in your text: ")
 
 # Vowel checker
-print("\nVowel checker:")
+print("\nVowel checker")
 
 # Define a string of vowels and initialize the vowel count
 vowelList = "aeiou"
@@ -17,7 +17,7 @@ for i in text.lower():
 print("\t\"{1}\" has {0} vowels.".format(vowelCount, text))
 
 # Word separator and counter
-print("\nWord separator and counter:")
+print("\nWord separator and counter")
 
 # Remove any non-alphanumeric characters except spaces and apostrophes
 textNotSpecial = "".join(i for i in text if (
@@ -35,7 +35,7 @@ else:
     print("\tThere are {0} words.".format(len(individualWords)))
 
 # Number checker
-print("\nNumber checker:")
+print("\nNumber checker")
 
 # Initialize lists and counters for even and odd numbers
 numberList = []
