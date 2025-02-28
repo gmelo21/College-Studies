@@ -23,7 +23,7 @@ public class Weapon {
         }
 
         if (isValid) {
-            affinity = newAffinity;
+            affinity = newAffinity.substring(0, 1).toUpperCase() + newAffinity.substring(1).toLowerCase();
         } else {
             System.out.println("Invalid affinity! Choose from: Standard, Heavy, Keen, Quality, Magic, Frost, Fire, Flame Art, Lightning, Sacred, Poison, Blood, Occult.");
         }
