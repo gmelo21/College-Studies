@@ -66,8 +66,8 @@ def binary_search_recursive(list, target, start, end):
         return binary_search_recursive(list, target, start, mid - 1)
 
 def menu():
-    original_numbers = list(range(10000))  # Store the original list
-    numbers = original_numbers.copy()  # Create a modifiable copy
+    original_numbers = list(range(10000))
+    numbers = original_numbers.copy() 
 
     while True:
         print("\nMenu:")
@@ -107,7 +107,7 @@ def menu():
                 result = binary_search_recursive(numbers, target, 0, len(numbers) - 1)
                 print(f"Result: {result}")
             case "7":
-                numbers = original_numbers.copy()  # Reset the list
+                numbers = original_numbers.copy()
                 print("List has been reset.")
             case "8":
                 print("Exiting...")
