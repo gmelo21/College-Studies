@@ -22,6 +22,9 @@ def binary_search_update(list, target, new_value):
         mid = (start + end) // 2
         if list[mid] == target:
             list[mid] = new_value
+            start_index = max(0, mid - 5)
+            end_index = min(len(list) - 1, mid + 5)
+            print(f"Updated portion of the list: {list[start_index:end_index + 1]}")
             return
         elif target > list[mid]:
             start = mid + 1
@@ -63,7 +66,9 @@ def binary_search_recursive(list, target, start, end):
         return binary_search_recursive(list, target, start, mid - 1)
 
 def menu():
-    numbers = list(range(10000))
+    original_numbers = list(range(10000))  # Store the original list
+    numbers = original_numbers.copy()  # Create a modifiable copy
+
     while True:
         print("\nMenu:")
         print("1. Linear Search")
@@ -72,9 +77,10 @@ def menu():
         print("4. Linear Search Comparisons")
         print("5. Binary Search Comparisons")
         print("6. Binary Search Recursive")
-        print("7. Exit")
+        print("7. Reset List")
+        print("8. Exit")
         choice = input("Choose an option: ")
-        
+
         match choice:
             case "1":
                 target = int(input("Enter the number to search: "))
@@ -88,7 +94,6 @@ def menu():
                 target = int(input("Enter the number to update: "))
                 new_value = int(input("Enter the new value: "))
                 binary_search_update(numbers, target, new_value)
-                print(f"List after update: {numbers}")
             case "4":
                 target = int(input("Enter the number to search: "))
                 result = linear_search_comparisons(numbers, target)
@@ -102,6 +107,9 @@ def menu():
                 result = binary_search_recursive(numbers, target, 0, len(numbers) - 1)
                 print(f"Result: {result}")
             case "7":
+                numbers = original_numbers.copy()  # Reset the list
+                print("List has been reset.")
+            case "8":
                 print("Exiting...")
                 break
             case _:
