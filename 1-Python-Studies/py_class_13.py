@@ -12,9 +12,7 @@ def bubble_sort(list):
             comparisons += 1
             if list[j] > list[j + 1]:
                 # Swap adjacent elements if they are in the wrong order
-                temp = list[j]
-                list[j] = list[j + 1]
-                list[j + 1] = temp
+                list[j], list[j + 1] = list[j + 1], list[j]
                 swaps += 1
     return comparisons, swaps
 
@@ -35,9 +33,7 @@ def selection_sort(list):
             if list[j] < list[min_index]:
                 min_index = j
         # Swap the found minimum element with the element at the current index
-        temp = list[i]
-        list[i] = list[min_index]
-        list[min_index] = temp
+        list[i], list[min_index] = list[min_index], list[i]
         swaps += 1
     return comparisons, swaps
 
@@ -55,9 +51,7 @@ def insertion_sort(list):
         comparisons += 1  # Count the first comparison for this element
         # Shift elements until the correct position is found
         while j > 0 and list[j] < list[j - 1]:
-            temp = list[j]
-            list[j] = list[j - 1]
-            list[j - 1] = temp
+            list[j], list[j - 1] = list[j - 1], list[j]
             j -= 1
             swaps += 1
     return comparisons, swaps
