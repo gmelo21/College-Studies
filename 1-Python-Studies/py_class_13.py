@@ -50,10 +50,15 @@ def insertion_sort(list):
         j = i
         comparisons += 1  # Count the first comparison for this element
         # Shift elements until the correct position is found
-        while j > 0 and list[j] < list[j - 1]:
-            list[j], list[j - 1] = list[j - 1], list[j]
-            j -= 1
-            swaps += 1
+        while j > 0:
+            comparisons += 1
+            if list[j] < list[j - 1]:
+                list[j], list[j - 1] = list[j - 1], list[j]
+                swaps += 1
+                j -= 1
+            else:
+                break
+
     return comparisons, swaps
 
 def display_sort_results(sort_function, list):
