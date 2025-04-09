@@ -1,3 +1,5 @@
+package br.com.fiap.bean;
+
 public class Weapon {
     public String name;
     public String affinity;

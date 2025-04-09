@@ -1,3 +1,7 @@
+package br.com.fiap.main;
+
+import br.com.fiap.bean.Weapon;
+
 public class UseWeapon {
     public static void main(String[] args) {
         Weapon myWeapon = new Weapon();
@@ -10,8 +14,8 @@ public class UseWeapon {
         myWeapon.upgrade();
         myWeapon.changeAffinity("Keen");
 
-        System.out.println("Weapon name: " + myWeapon.name);
-        System.out.println("Weapon affinity: " + myWeapon.affinity);
+        System.out.println("br.com.fiap.bean.Weapon name: " + myWeapon.name);
+        System.out.println("br.com.fiap.bean.Weapon affinity: " + myWeapon.affinity);
         System.out.println("Current damage: " + myWeapon.damage);
     }
 }

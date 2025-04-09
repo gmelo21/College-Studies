@@ -1,3 +1,8 @@
+package br.com.fiap.main;
+
+import br.com.fiap.bean.AirConditioner;
+import br.com.fiap.bean.Television;
+
 public class UseAppliances {
     public static void main(String[] args) {
         Television tv = new Television();
