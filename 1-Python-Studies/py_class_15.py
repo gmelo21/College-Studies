@@ -114,5 +114,4 @@ def menu_recursive():
                 print("Invalid option. Please try again.")
 
 
-# Run the menu
 menu_recursive()
