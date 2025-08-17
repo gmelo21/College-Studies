@@ -1,42 +1,36 @@
 package br.com.fiap;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class MainHero {
     public static void main(String[] args) {
-        Hero hero;
-        String name;
-        String secretId;
-        String[] powers;
-        String[] weaknesses;
-        int quantityPowers;
-        int quantityWeaknesses;
+        boolean keep = true;
+        while (keep) {
+            String name = JOptionPane.showInputDialog("Enter the hero name:");
+            String secretIdentity = JOptionPane.showInputDialog("Enter the secret identity:");
+            ArrayList<String> powers = new ArrayList<>();
+            ArrayList<String> weaknesses = new ArrayList<>();
 
-        do {
-            try {
-                name = JOptionPane.showInputDialog("Choose the Hero's name: ");
-                secretId = JOptionPane.showInputDialog("Choose the Hero's secret identity's name: ");
-                quantityPowers = Integer.parseInt(JOptionPane.showInputDialog("How many powers? "));
-                quantityWeaknesses = Integer.parseInt(JOptionPane.showInputDialog("How many weaknesses? "));
-
-                powers = new String[quantityPowers];
-                for (int i = 0; i < powers.length; i++) {
-                    powers[i] = JOptionPane.showInputDialog(String.format("Power %d: ", (i + 1)));
-                }
-
-                weaknesses = new String[quantityWeaknesses];
-                for (int i = 0; i < weaknesses.length; i++) {
-                    weaknesses[i] = JOptionPane.showInputDialog(String.format("Weaknesses %d: ", (i + 1)));
-                }
-
-                hero = new Hero(name, secretId, powers, weaknesses);
-                hero.listHero();
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+            while (true) {
+                String power = JOptionPane.showInputDialog("Enter a power (or type 'end' to stop):");
+                if (power.equalsIgnoreCase("end")) break;
+                powers.add(power);
             }
 
-        } while (JOptionPane.showConfirmDialog(null, "Continue?", "Attention!", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == 0);
-        JOptionPane.showMessageDialog(null, "End of program.", "Bye!", JOptionPane.WARNING_MESSAGE);
+            while (true) {
+                String weakness = JOptionPane.showInputDialog("Enter a weakness (or type 'end' to stop):");
+                if (weakness.equalsIgnoreCase("end")) break;
+                weaknesses.add(weakness);
+            }
+
+            Hero hero = new Hero(name, secretIdentity, powers, weaknesses);
+            hero.listHero();
+            int option = JOptionPane.showConfirmDialog(null, "Do you want to continue?", "Continue", JOptionPane.YES_NO_OPTION);
+            if (option == JOptionPane.NO_OPTION) {
+                JOptionPane.showMessageDialog(null, "Goodbye!");
+                keep = false;
+            }
+        }
     }
 }

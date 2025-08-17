@@ -1,30 +1,26 @@
 package br.com.fiap;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class MainTeam {
     public static void main(String[] args) {
-        Team group;
-        String name;
-        String[] members;
-        int quantity;
-
-        do {
-            try {
-                name = JOptionPane.showInputDialog("Choose the team's name: ");
-                quantity = Integer.parseInt(JOptionPane.showInputDialog("How many members: "));
-                members = new String[quantity];
-                for (int i = 0; i < members.length; i++) {
-                    members[i] = JOptionPane.showInputDialog(String.format("Member %d: ", (i + 1)));
-                }
-                group = new Team(name, members);
-                group.listTeam();
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+        boolean keep = true;
+        while (keep) {
+            String name = JOptionPane.showInputDialog("Enter the team name:");
+            ArrayList<String> members = new ArrayList<>();
+            while (true) {
+                String member = JOptionPane.showInputDialog("Enter a member name (or type 'end' to stop):");
+                if (member.equalsIgnoreCase("end")) break;
+                members.add(member);
             }
-
-        } while (JOptionPane.showConfirmDialog(null, "Continue?", "Attention!", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == 0);
-        JOptionPane.showMessageDialog(null, "End of program.", "Bye!", JOptionPane.WARNING_MESSAGE);
+            Team team = new Team(name, members);
+            team.listTeam();
+            int option = JOptionPane.showConfirmDialog(null, "Do you want to continue?", "Continue", JOptionPane.YES_NO_OPTION);
+            if (option == JOptionPane.NO_OPTION) {
+                JOptionPane.showMessageDialog(null, "Goodbye!");
+                keep = false;
+            }
+        }
     }
 }
