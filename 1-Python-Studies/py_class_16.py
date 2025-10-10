@@ -10,23 +10,36 @@ items = [
 
 max_weight = 8
 
+all_combinations = []
 valid_combinations = []
 
 def generate_combinations(start, current_combo):
     if current_combo:
         total_weight = sum(item['weight'] for item in current_combo)
         total_value = sum(item['value'] for item in current_combo)
+        combo_data = {
+            'combo': current_combo,
+            'total_weight': total_weight,
+            'total_value': total_value
+        }
+        all_combinations.append(combo_data)
+
         if total_weight <= max_weight:
-            valid_combinations.append({
-                'combo': current_combo,
-                'total_weight': total_weight,
-                'total_value': total_value
-            })
+            valid_combinations.append(combo_data)
 
     for i in range(start, len(items)):
         generate_combinations(i + 1, current_combo + [items[i]])
 
 generate_combinations(0, [])
+
+is_overweight = lambda w: w > max_weight
+
+print("All Combinations:\n")
+for combo in all_combinations:
+    names = [item['name'] for item in combo['combo']]
+    status = "Overweight" if is_overweight(combo['total_weight']) else "OK"
+    print(f"[{status}] Items: {', '.join(names)} - Total Weight: {combo['total_weight']} - "
+          f"Total Value: {combo['total_value']}")
 
 if valid_combinations:
     max_value = max(c['total_value'] for c in valid_combinations)
@@ -41,4 +54,4 @@ if valid_combinations:
         print(f"Items: {', '.join(names)} - Total Weight: {combo['total_weight']} - "
               f"Total Value: {combo['total_value']}")
 else:
-    print("No valid combinations within weight limit.")
+    print("\nNo valid combinations within weight limit.")
